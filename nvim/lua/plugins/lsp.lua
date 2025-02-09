@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "clangd", "gopls" },
+				ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "clangd", "gopls", "jedi_language_server", "pyright", "jdtls" },
 			})
 		end,
 	},
@@ -19,7 +19,8 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 
-			local lsp_servers = { "lua_ls", "ts_ls", "tailwindcss", "clangd", "gopls" }
+			local lsp_servers = { "lua_ls", "ts_ls", "tailwindcss", "clangd", "gopls", "jedi_language_server", "pyright",
+				"jdtls" }
 			for _, server in ipairs(lsp_servers) do
 				lspconfig[server].setup({
 					capabilities = capabilities,
@@ -28,7 +29,9 @@ return {
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+			vim.keymap.set("n", "gl", vim.diagnostic.open_float, {})
 			vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, {})
 		end,
 	},
 	{
@@ -43,7 +46,6 @@ return {
 				sources = {
 					null_ls.builtins.formatting.stylua,
 					null_ls.builtins.formatting.prettier,
-					require("none-ls.diagnostics.eslint_d"),
 				},
 			})
 

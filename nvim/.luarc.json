@@ -1,8 +1,4 @@
 {
-    "diagnostics.disable": [
-        "missing-fields",
-        "undefined-global"
-    ],
     "diagnostics.globals": [
         "vim"
     ]
