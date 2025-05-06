@@ -27,7 +27,7 @@ return {
 
 			local lsp_servers = {
 				"lua_ls", "ts_ls", "tailwindcss", "clangd", "gopls",
-				"jdtls", "pyright"
+				"jdtls", "pyright", "intelephense"
 			}
 
 			for _, server in ipairs(lsp_servers) do

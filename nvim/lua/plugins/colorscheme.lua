@@ -1,11 +1,11 @@
 return {
-    "folke/tokyonight.nvim",
+    "catppuccin/nvim",
     lazy = false,
     priority = 1000,
     config = function()
-			require("tokyonight").setup({
+			require("catppuccin").setup({
 				style = "night",
-				transparent = true,
+				transparent_background = true,
 				terminal_colors = true,
 				floats = true,
 				styles = {
@@ -14,6 +14,6 @@ return {
 				},
 			})
 
-      vim.cmd([[colorscheme tokyonight]])
+      vim.cmd([[colorscheme catppuccin]])
     end,
 }
