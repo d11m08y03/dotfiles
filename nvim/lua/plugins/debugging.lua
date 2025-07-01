@@ -10,7 +10,7 @@ return {
 	config = function()
 		require("dapui").setup()
 		require("dap-go").setup()
-		require("dap-python").setup("/usr/bin/python")
+		require("dap-python").setup()
 
 		vim.keymap.set('n', '<Leader>dc', function() require('dap').continue() end)
 		vim.keymap.set('n', '<Leader>do', function() require('dap').step_over() end)

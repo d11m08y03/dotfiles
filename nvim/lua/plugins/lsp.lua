@@ -27,7 +27,7 @@ return {
 
 			local lsp_servers = {
 				"lua_ls", "ts_ls", "tailwindcss", "clangd", "gopls",
-				"jdtls", "pyright", "intelephense"
+				"jdtls", "ruff", "intelephense", "tinymist", "pyright"
 			}
 
 			for _, server in ipairs(lsp_servers) do
@@ -99,7 +99,6 @@ return {
 				sources = {
 					null_ls.builtins.formatting.stylua,
 					null_ls.builtins.formatting.prettier,
-					null_ls.builtins.formatting.black,
 				},
 			})
 
