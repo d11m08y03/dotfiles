@@ -127,9 +127,6 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-gaps inner 5
-gaps outer 5
-
 smart_borders yes
 default_border pixel 2
 default_floating_border pixel 2
