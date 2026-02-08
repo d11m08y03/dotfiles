@@ -1,48 +1,38 @@
 return {
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("tokyonight").setup({
-				transparent = true,
-				styles = {
-					sidebars = "transparent",
-					floats = "transparent",
-				},
-			})
-			vim.cmd("colorscheme tokyonight")
-		end,
-	},
-	{
-		"ellisonleao/gruvbox.nvim",
-		priority = 1000,
-		config = function()
-			-- Default options:
-			require("gruvbox").setup({
-				terminal_colors = true, -- add neovim terminal colors
-				undercurl = true,
-				underline = true,
-				bold = true,
-				italic = {
-					strings = true,
-					emphasis = true,
-					comments = true,
-					operators = false,
-					folds = true,
-				},
-				strikethrough = true,
-				invert_selection = false,
-				invert_signs = false,
-				invert_tabline = false,
-				inverse = true, -- invert background for search, diffs, statuslines and errors
-				contrast = "", -- can be "hard", "soft" or empty string
-				palette_overrides = {},
-				overrides = {},
-				dim_inactive = false,
-				transparent_mode = true,
-			})
-		end,
-		opts = ...,
-	},
+    {
+        "bjarneo/aether.nvim",
+        name = "aether",
+        priority = 1000,
+        opts = {
+            disable_italics = false,
+            colors = {
+                -- Monotone shades (base00-base07)
+                base00 = "#010101", -- Default background
+                base01 = "#dddbdb", -- Lighter background (status bars)
+                base02 = "#010101", -- Selection background
+                base03 = "#dddbdb", -- Comments, invisibles
+                base04 = "#F6F6F5", -- Dark foreground
+                base05 = "#ffffff", -- Default foreground
+                base06 = "#ffffff", -- Light foreground
+                base07 = "#F6F6F5", -- Light background
+
+                -- Accent colors (base08-base0F)
+                base08 = "#958a8a", -- Variables, errors, red
+                base09 = "#ada5a5", -- Integers, constants, orange
+                base0A = "#b2aaaa", -- Classes, types, yellow
+                base0B = "#a49a9a", -- Strings, green
+                base0C = "#dedada", -- Support, regex, cyan
+                base0D = "#c1baba", -- Functions, keywords, blue
+                base0E = "#cfcaca", -- Keywords, storage, magenta
+                base0F = "#cac5c5", -- Deprecated, brown/yellow
+            },
+        },
+        config = function(_, opts)
+            require("aether").setup(opts)
+            vim.cmd.colorscheme("aether")
+
+            -- Enable hot reload
+            require("aether.hotreload").setup()
+        end,
+    },
 }
