@@ -128,8 +128,11 @@ mode "resize" {
 }
 
 gaps inner 5
+gaps outer 5
 
-new_window none
+smart_borders yes
+default_border pixel 2
+default_floating_border pixel 2
 
 bindsym $mod+r mode "resize"
 
