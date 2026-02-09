@@ -1,0 +1,23 @@
+# General settings
+separator_block_width=15
+markup=pango
+color=#CCCCCC 
+
+[volume]
+command=if pactl get-sink-mute @DEFAULT_SINK@ | grep -q "yes"; then echo "[MUTED] 0%"; else pactl get-sink-volume @DEFAULT_SINK@ | grep -o "[0-9]\+%" | head -n1 | sed "s/^/[VOL] /"; fi
+interval=1
+signal=10
+color=#FFFFFF
+
+[brightness]
+command=brightnessctl get && brightnessctl max | awk -F' ' '{printf "%.0f%%", $1/$2*100}'
+interval=1
+signal=11
+color=#FFFFFF
+label=[BRIGHT] 
+
+# Date block
+[date]
+command=date '+%a %d %b - %Y %H:%M'
+interval=60
+color=#FFFFFF

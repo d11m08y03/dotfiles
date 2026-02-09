@@ -26,6 +26,9 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
+bindsym Print exec flameshot gui
+bindsym Ctrl+Print exec flameshot screen
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -131,8 +134,21 @@ smart_borders yes
 default_border pixel 2
 default_floating_border pixel 2
 
+client.focused          #ffffff #ffffff #ffffff #ffffff #ffffff
+
 bindsym $mod+r mode "resize"
 
 bar {
-        status_command i3status
+	status_command i3blocks
+
+		colors {
+  background #000000
+        statusline #ffffff
+        separator  #ffffff
+
+        focused_workspace  #ffffff #000000 #ffffff
+        active_workspace   #ffffff #000000 #ffffff
+        inactive_workspace #000000 #000000 #ffffff
+        urgent_workspace   #ffffff #000000 #ffffff
+		}
 }
