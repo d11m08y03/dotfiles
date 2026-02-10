@@ -32,6 +32,7 @@ bindsym Print exec flameshot gui
 bindsym Ctrl+Print exec flameshot screen
 
 bindsym $mod+c exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+bindsym $mod+z exec i3lock
 
 # change focus
 bindsym $mod+h focus left
@@ -138,7 +139,17 @@ smart_borders yes
 default_border pixel 2
 default_floating_border pixel 2
 
-client.focused          #ffffff #ffffff #ffffff #ffffff #ffffff
+# focused window
+client.focused          #ffffff #111111 #ffffff #111111 #ffffff
+
+# unfocused window
+client.unfocused        #666666 #111111 #aaaaaa #111111 #666666
+
+# inactive
+client.focused_inactive #888888 #111111 #cccccc #111111 #888888
+
+# urgent
+client.urgent           #ffffff #000000 #ffffff #000000 #ffffff
 
 bindsym $mod+r mode "resize"
 
@@ -157,7 +168,6 @@ bindsym $mod+Shift+p exec postman
 for_window [class="Thunar"] floating enable
 
 # Assign apps to workspaces
-for_window [class="kitty"] move to workspace 1
 for_window [class="zen"] move to workspace 2
 for_window [class="spotify"] move to workspace 3
 for_window [class="postman"] move to workspace 4
