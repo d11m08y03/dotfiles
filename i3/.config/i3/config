@@ -153,6 +153,9 @@ client.urgent           #ffffff #000000 #ffffff #000000 #ffffff
 
 bindsym $mod+r mode "resize"
 
+# Script keybinds
+bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/scripts/cycle-audio-output.sh
+
 # Autostart apps
 exec --no-startup-id kitty
 exec --no-startup-id zen-browser
@@ -169,7 +172,7 @@ for_window [class="Thunar"] floating enable
 
 # Assign apps to workspaces
 for_window [class="zen"] move to workspace 2
-for_window [class="spotify"] move to workspace 3
+for_window [class="Spotify"] move to workspace 3
 for_window [class="postman"] move to workspace 4
 
 bar {
