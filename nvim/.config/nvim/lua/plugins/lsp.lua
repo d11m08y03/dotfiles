@@ -29,6 +29,7 @@ return {
 				"tinymist",
 				"apex_ls",
 				"clangd",
+				"elixirls",
 			})
 
 			-- Keymaps
