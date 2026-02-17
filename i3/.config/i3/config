@@ -7,6 +7,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id xrandr --output DP-1 --mode 1920x1080 --rate 100
 exec --no-startup-id greenclip daemon
+exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -27,6 +28,7 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+Shift+w exec --no-startup-id ~/.config/i3/scripts/random-wallpaper.sh
 
 bindsym Print exec flameshot gui
 bindsym Ctrl+Print exec flameshot screen
@@ -135,21 +137,21 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-smart_borders yes
 default_border pixel 2
+smart_borders yes
 default_floating_border pixel 2
 
 # focused window
-client.focused          #ffffff #111111 #ffffff #111111 #ffffff
+client.focused          #31748f #191724 #e0def4 #403d52 #31748f
 
 # unfocused window
-client.unfocused        #666666 #111111 #aaaaaa #111111 #666666
+client.unfocused        #403d52 #191724 #6e6a86 #191724 #403d52
 
 # inactive
-client.focused_inactive #888888 #111111 #cccccc #111111 #888888
+client.focused_inactive #524f67 #191724 #6e6a86 #191724 #524f67
 
 # urgent
-client.urgent           #ffffff #000000 #ffffff #000000 #ffffff
+client.urgent           #eb6f92 #191724 #e0def4 #eb6f92 #eb6f92
 
 bindsym $mod+r mode "resize"
 
@@ -157,7 +159,6 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/scripts/cycle-audio-output.sh
 
 # Autostart apps
-exec --no-startup-id kitty
 exec --no-startup-id zen-browser
 exec --no-startup-id spotify
 
@@ -166,6 +167,8 @@ bindsym $mod+Shift+f exec thunar
 bindsym $mod+Shift+b exec zen-browser
 bindsym $mod+Shift+m exec spotify
 bindsym $mod+Shift+p exec postman
+
+gaps inner 10
 
 # Floating windows
 for_window [class="Thunar"] floating enable
@@ -176,16 +179,16 @@ for_window [class="Spotify"] move to workspace 3
 for_window [class="postman"] move to workspace 4
 
 bar {
-	status_command i3blocks
+    status_command i3blocks
 
-		colors {
-  background #000000
-        statusline #ffffff
-        separator  #ffffff
+    colors {
+        background #191724
+        statusline #e0def4
+        separator  #403d52
 
-        focused_workspace  #ffffff #000000 #ffffff
-        active_workspace   #ffffff #000000 #ffffff
-        inactive_workspace #000000 #000000 #ffffff
-        urgent_workspace   #ffffff #000000 #ffffff
-		}
+        focused_workspace  #31748f #26233a #e0def4
+        active_workspace   #524f67 #26233a #e0def4
+        inactive_workspace #191724 #191724 #6e6a86
+        urgent_workspace   #eb6f92 #26233a #e0def4
+    }
 }
