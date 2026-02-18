@@ -1,0 +1,76 @@
+configuration {
+    show-icons: true;
+}
+
+* {
+    background: #191724;
+    foreground: #e0def4;
+    border-color: #403d52;
+    font: "JetBrainsMono Nerd Font 11";
+}
+
+window {
+    width: 32%;
+    border: 2px;
+    border-radius: 0px;
+    padding: 14px;
+    background-color: #191724;
+}
+
+mainbox {
+    spacing: 10px;
+    background-color: #191724;
+}
+
+inputbar {
+    background-color: #26233a;
+    border: 0 0 2px 0;
+    border-color: #403d52;
+    border-radius: 0px;
+    padding: 8px;
+}
+
+entry, prompt {
+    background-color: #26233a;
+    text-color: #e0def4;
+}
+
+listview {
+    lines: 8;
+    spacing: 6px;
+    background-color: #191724;
+		border: none;
+    scrollbar: true;
+}
+
+element {
+    padding: 6px;
+    border-radius: 0px;
+    background-color: #26233a;
+    text-color: #e0def4;
+}
+
+element normal.normal {
+    background-color: #191724;
+    text-color: #e0def4;
+}
+
+element alternate.normal {
+    background-color: #191724;
+    text-color: #c4a7e7;
+}
+
+element selected.normal {
+    background-color: #31748f;
+    text-color: #191724;
+}
+
+element selected.active {
+    background-color: #31748f;
+    text-color: #191724;
+}
+
+element selected.urgent {
+    background-color: #eb6f92;
+    text-color: #191724;
+}
