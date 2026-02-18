@@ -5,6 +5,7 @@ font pango:monospace 8
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
+exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
 exec --no-startup-id xrandr --output DP-1 --mode 1920x1080 --rate 100
 exec --no-startup-id greenclip daemon
 exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers
@@ -168,7 +169,7 @@ bindsym $mod+Shift+b exec zen-browser
 bindsym $mod+Shift+m exec spotify
 bindsym $mod+Shift+p exec postman
 
-gaps inner 10
+gaps inner 5
 
 # Floating windows
 for_window [class="Thunar"] floating enable
