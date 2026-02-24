@@ -8,5 +8,6 @@ PS1='[\u@\h \W]\$ '
 set -o vi
 
 export PATH=/home/zakariyya/Work/Programs/sf/bin:$PATH
+export PATH=/home/zakariyya/go/bin:$PATH
 
 eval "$(zoxide init bash)"
