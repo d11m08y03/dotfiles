@@ -37,6 +37,7 @@ return {
 				vim.lsp.buf.hover({ border = "bold" }) -- or "double", "single", etc.
 			end, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+			vim.keymap.set('n', '<leader>ll', ':LspRestart<CR>', { desc = 'Restart LSP' })
 			vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", {})
 			vim.keymap.set("n", "gl", function()
 				vim.diagnostic.open_float(nil, { border = "bold" })
