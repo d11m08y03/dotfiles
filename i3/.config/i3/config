@@ -30,6 +30,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+Shift+w exec --no-startup-id ~/.config/i3/scripts/random-wallpaper.sh
+bindsym $mod+Shift+d exec --no-startup-id ~/.config/i3/scripts/toggle-display.sh
 
 bindsym Print exec flameshot gui
 bindsym Ctrl+Print exec flameshot screen
@@ -169,7 +170,7 @@ bindsym $mod+Shift+b exec zen-browser
 bindsym $mod+Shift+m exec spotify
 bindsym $mod+Shift+p exec postman
 
-gaps inner 5
+gaps inner 0
 
 # Floating windows
 for_window [class="Thunar"] floating enable
