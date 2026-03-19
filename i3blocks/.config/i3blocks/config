@@ -23,6 +23,12 @@ signal=11
 color=#FFFFFF
 label=[BRIGHT] 
 
+[wifi]
+command=iwgetid -r || echo "Disconnected"
+interval=10
+color=#FFFFFF
+label=[WIFI] 
+
 [date]
 command=date '+%a %d %b - %Y %H:%M'
 interval=60
