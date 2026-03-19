@@ -23,6 +23,7 @@ return {
 				html = { "prettierd" },
 				typst = { "prettypst" },
 				php = { "intelephense" },
+				sql = { "pg_format" },
 			},
 		})
 	end,
