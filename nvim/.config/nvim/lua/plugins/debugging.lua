@@ -113,13 +113,19 @@ return {
 		require("nvim-dap-virtual-text").setup()
 
 		require("dap-go").setup({
+			-- delve configurations
+			delve = {
+				path = "dlv", -- Ensure it uses the system dlv
+				initialize_timeout_sec = 20,
+			},
 			dap_configurations = {
 				{
 					type = "go",
-					name = "Debug API",
+					name = "Debug API (Forceshift)",
 					request = "launch",
-					program = "${workspaceFolder}",
-					buildFlags = "-gcflags=all=-N -l",
+					-- Point to the directory, NOT the file, and NO trailing slash
+					program = "${workspaceFolder}/cmd/api",
+					cwd = "${workspaceFolder}",
 				},
 			},
 		})
