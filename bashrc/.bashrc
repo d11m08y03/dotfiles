@@ -9,5 +9,7 @@ set -o vi
 
 export PATH=/home/zakariyya/Work/Programs/sf/bin:$PATH
 export PATH=/home/zakariyya/go/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
 
 eval "$(zoxide init bash)"
+# ~/.local/bin/show_razan.sh
