@@ -31,6 +31,7 @@ bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+Shift+w exec --no-startup-id ~/.config/i3/scripts/random-wallpaper.sh
 bindsym $mod+Shift+d exec --no-startup-id ~/.config/i3/scripts/toggle-display.sh
+bindsym $mod+b bar mode toggle bar-1 
 
 bindsym Print exec flameshot gui
 bindsym Ctrl+Print exec flameshot screen
@@ -181,16 +182,18 @@ for_window [class="Spotify"] move to workspace 3
 for_window [class="postman"] move to workspace 4
 
 bar {
-    status_command i3blocks
+		id bar-1 
+		status_command i3blocks
+		modifier none
 
-    colors {
-        background #191724
-        statusline #e0def4
-        separator  #403d52
+		colors {
+			background #191724
+				statusline #e0def4
+				separator  #403d52
 
-        focused_workspace  #31748f #26233a #e0def4
-        active_workspace   #524f67 #26233a #e0def4
-        inactive_workspace #191724 #191724 #6e6a86
-        urgent_workspace   #eb6f92 #26233a #e0def4
-    }
+				focused_workspace  #31748f #26233a #e0def4
+				active_workspace   #524f67 #26233a #e0def4
+				inactive_workspace #191724 #191724 #6e6a86
+				urgent_workspace   #eb6f92 #26233a #e0def4
+		}
 }

@@ -1,15 +1,21 @@
 #!/bin/bash
 
-# Define the display
+# Define the internal display
 MON="DP-4"
 
-# Check if the monitor is in the 'active' list
+# Find the name of your external monitor automatically
+# This looks for a 'connected' monitor that is NOT DP-4
+EXT=$(xrandr --query | grep " connected" | grep -v "$MON" | cut -d" " -f1 | head -n1)
+
+# Check if the internal monitor is currently active
 if xrandr --listactivemonitors | grep -q "$MON"; then
     xrandr --output "$MON" --off
-    # Optional: send a notification if you have a notification daemon like dunst/mako
-    # notify-send "Display" "$MON has been turned OFF" --icon=display
 else
-    # Turn it on, set as primary, and ensure it's not overlapping other screens
-    xrandr --output "$MON" --auto --primary
-    # notify-send "Display" "$MON has been turned ON" --icon=display
+    # If an external monitor was found, put the laptop to the left of it
+    if [ -n "$EXT" ]; then
+        xrandr --output "$MON" --auto --primary --left-of "$EXT"
+    else
+        # If no external monitor is plugged in, just turn it on normally
+        xrandr --output "$MON" --auto --primary
+    fi
 fi
