@@ -25,6 +25,7 @@ return {
 				"ts_ls",
 				"tailwindcss",
 				"bashls",
+				"ts_ls",
 				"intelephense",
 				"tinymist",
 				"apex_ls",
