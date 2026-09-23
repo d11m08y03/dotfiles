@@ -21,6 +21,8 @@ vim.opt.foldcolumn = "0" -- Set to "1" if you want to see a side column for fold
 vim.opt.foldlevel = 99   -- Keep most folds open by default
 vim.opt.foldlevelstart = 99
 
+vim.opt.cursorline = true
+
 -- za	Toggle the current fold (open if closed, close if open).[2][3][4][5]
 -- zo	Open the current fold.
 -- zc	Close the current fold.
