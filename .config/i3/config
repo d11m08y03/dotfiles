@@ -129,7 +129,7 @@ gaps inner 10
 bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/scripts/scripts/display-toggle.sh
 
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -theme ~/.config/rofi/theme.rasi
-bindsym $mod+Tab exec --no-startup-id rofi -show window -theme ~/.config/rofi/theme.rasi
+bindsym $mod+Tab exec --no-startup-id rofi -show window -theme ~/.config/rofi/theme.rasi -show-icons
 bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme ~/.config/rofi/theme.rasi
 bindsym $mod+b exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Wallpapers/*
 
