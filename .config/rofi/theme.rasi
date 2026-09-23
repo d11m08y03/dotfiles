@@ -26,18 +26,18 @@
     selected-active-background: #31748fee;
 
     separatorcolor: transparent;
-    bordercolor: #ebbcbaee;
+		bordercolor: #9ccfd8;
 
     urgent-foreground: @fgd;
 }
 
 #window {
-		width: 650px;
+    width: 650px;
     background-color: @background;
-    border: 3px;
+    border: 2px;
     border-radius: 0px;
     border-color: @bordercolor;
-    padding: 12px;
+    padding: 6px;
 }
 
 #mainbox {
