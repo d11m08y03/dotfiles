@@ -95,6 +95,25 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+for_window [class="(?i)^spotify$"] move window to workspace number $ws3
+for_window [class="(?i)^zen-browser$"] move window to workspace number $ws2
+for_window [class="(?i)^slack$"] move window to workspace number $ws10
+
+# Assign applications to workspaces
+for_window [class="(?i)^spotify$"] move window to workspace number $ws3
+for_window [class="(?i)^zen-browser$"] move window to workspace number $ws2
+for_window [class="(?i)^slack$"] move window to workspace number $ws10
+
+# Start applications on specific workspaces
+exec --no-startup-id i3-msg 'workspace number 1; exec kitty'
+exec --no-startup-id i3-msg 'workspace number 2; exec zen-browser'
+exec --no-startup-id i3-msg 'workspace number 3; exec spotify'
+exec --no-startup-id i3-msg 'workspace number 4; exec nautilus'
+exec --no-startup-id i3-msg 'workspace number 10; exec slack'
+
+# Return to workspace 1 after startup
+exec --no-startup-id i3-msg 'workspace number 1'
+
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -129,6 +148,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 gaps inner 10
 
 bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/scripts/scripts/display-toggle.sh
+
+bindsym $mod+Shift+b exec --no-startup-id zen
+bindsym $mod+n exec --no-startup-id dunstctl close
+bindsym $mod+Shift+f exec --no-startup-id nautilus
 
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -theme ~/.config/rofi/theme.rasi
 bindsym $mod+Tab exec --no-startup-id rofi -show window -theme ~/.config/rofi/theme.rasi -show-icons
