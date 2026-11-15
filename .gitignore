@@ -1,0 +1,10 @@
+# Backup files from Hyprland config edits
+*.bak.*
+
+# Runtime/cache (never track)
+*.cache
+*/.cache/
+
+# Editor
+.*.swp
+*~

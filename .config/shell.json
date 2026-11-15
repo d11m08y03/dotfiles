@@ -1,0 +1,105 @@
+{
+  "bar": {
+    "layout": {
+      "center": [
+        {
+          "format": "ddd d MMM HH:mm",
+          "formatAlt": "d MMMM 'W'ww yyyy",
+          "id": "omarchy.clock",
+          "verticalFormat": "HH\n—\nmm"
+        }
+      ],
+      "left": [
+        {
+          "id": "zakariyya.menu"
+        },
+        {
+          "id": "omarchy.workspaces"
+        }
+      ],
+      "right": [
+        {
+          "id": "omarchy.tray"
+        },
+        {
+          "id": "omarchy.keyboard-layout"
+        },
+        {
+          "id": "omarchy.agents"
+        },
+        {
+          "id": "omarchy.bluetooth"
+        },
+        {
+          "id": "omarchy.network"
+        },
+        {
+          "id": "omarchy.audio"
+        },
+        {
+          "id": "omarchy.monitor"
+        },
+        {
+          "id": "omarchy.power"
+        }
+      ],
+      "centerBegin": [
+        {
+          "id": "omarchy.indicators"
+        }
+      ],
+      "centerEnd": [
+        {
+          "id": "omarchy.elsewhen",
+          "cities": [
+            {
+              "name": "Mauritius",
+              "zone": "Indian/Mauritius"
+            },
+            {
+              "name": "Melbourne",
+              "zone": "Australia/Melbourne"
+            }
+          ]
+        },
+        {
+          "id": "omarchy.weather"
+        },
+        {
+          "id": "omarchy.system-update"
+        }
+      ],
+      "tray": []
+    },
+    "position": "bottom",
+    "transparent": true
+  },
+  "cloneSourceRestores": [
+    "zakariyya.menu",
+    "zakariyya.clipboard",
+    "zakariyya.emojis",
+    "zakariyya.image-picker"
+  ],
+  "disabledPlugins": [
+    "omarchy.menu",
+    "omarchy.clipboard",
+    "omarchy.emojis",
+    "omarchy.image-picker"
+  ],
+  "idle": {
+    "lock": 300,
+    "screensaver": 150
+  },
+  "plugins": [
+    {
+      "id": "zakariyya.clipboard"
+    },
+    {
+      "id": "zakariyya.emojis"
+    },
+    {
+      "id": "zakariyya.image-picker"
+    }
+  ],
+  "version": 1
+}
